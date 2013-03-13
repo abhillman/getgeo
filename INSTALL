@@ -1,0 +1,27 @@
+Installation Instructions for GetGeo Galaxy Tool
+December 16, 2012
+Aryeh Hillman
+
+This tool requires a relatively up-to-date installation
+of Galaxy, requires a relatively recent version of R
+with the packages Biobase and GEOquery, and requires
+a relatively recent version of Python and packages
+httlib2 and json. I recommend installing httlib2
+and json with pip (i.e. sudo pip install httplib2).
+
+When and if dependencies are met a folder should be
+created within the Galaxy distribution at the path
+tools, call it "aryeh" or some other name of your
+choice. Place the files "getGeo.py" and "getGeo.xml"
+in that directory. Next, we need to make Galaxy
+aware of the tool. To do that, edit tool_conf.xml,
+which is in the root directory of Galaxy. Create a new
+tool section or add it to an existing section. Suppose
+we would like to create a new tool section, add the following:
+
+<section name="Aryeh's Tools" id="aryeh">
+   <tool file="aryeh/getGeo.xml"/>
+</section>
+
+Restart Galaxy and the tool should be available.
+

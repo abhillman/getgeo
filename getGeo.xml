@@ -1,0 +1,16 @@
+<tool id="getgeo" name="Retrieve data and features from GEO">
+   <description></description>
+   <command interpreter="python">getGeo.py $accession $platform $features $data</command>
+   <inputs>
+      <param name="accession" size="10" type="text" value="GSE32982" label="GEO Accession" help="Usually starts with 'GSE'"/>
+      <param name="platform" size="10" type="text" value="GPL570"  label="Platform" help="Platforms can be retrieved with an accession at ncbi.nlm.nih.gov/geo/; if left blank, tool will retrieve the first platform available"/>
+   </inputs>
+   <outputs>
+      <data format="csv" name="features"/>
+      <data format="tabular" name="data"/>
+   </outputs>
+   
+   <help>
+Grabs features and data associated with a GEO accession and platform.
+   </help>
+</tool>
